@@ -102,6 +102,6 @@ app.get('/api/:name', (request, response) => {
         response.json(cloudTypes[clouodName]['level height'])
 })
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
     console.log(`The server is nowo running on ${PORT}.Better go catch it`)
 })
