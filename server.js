@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors')
 const PORT = 8000;
-app.use(cors)
+app.use(cors())
 
 let cloudTypes = {
     'Cirrus': {
@@ -101,8 +101,9 @@ app.get('/', (request, response) => {
 app.get('/api/:name', (request, response) => {
     const clouodName = request.params.name;
     if (cloudTypes[clouodName])
-        response.json(cloudTypes)
+        response.json(cloudTypes[clouodName])
 })
+
 
 app.listen(process.env.PORT || PORT, () => {
     console.log(`The server is nowo running on ${PORT}.Better go catch it`)
