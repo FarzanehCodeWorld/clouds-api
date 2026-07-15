@@ -1,0 +1,40 @@
+html {
+    font-size: 62.5%;
+    background: blueviolet;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* CARD */
+.card {
+    padding: 5px;
+    border: 1px solid rgb(163, 163, 244);
+    border-radius: 5%;
+    text-align: center;
+
+}
+
+.card__img {
+    width: 100%;
+    border-radius: 5%;
+    overflow: hidden;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid--1x3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media screen and (min-width:768px) {
+    .grid--1x3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
