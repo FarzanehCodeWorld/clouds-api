@@ -99,7 +99,7 @@ app.get('/', (request, response) => {
 app.get('/api/:name', (request, response) => {
     const clouodName = request.params.name;
     if (cloudTypes[clouodName])
-        response.json(cloudTypes[clouodName]['level height'])
+        response.json(cloudTypes)
 })
 
 app.listen(process.env.PORT || PORT, () => {
