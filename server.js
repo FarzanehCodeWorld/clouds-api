@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors')
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 app.use(cors())
 
 let cloudTypes = {
@@ -105,6 +105,6 @@ app.get('/api/:name', (request, response) => {
 })
 
 
-app.listen(process.env.PORT || PORT, () => {
-    console.log(`The server is nowo running on ${PORT}.Better go catch it`)
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`The server is running on ${PORT}.Better go catch it`)
 })
