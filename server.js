@@ -1,3 +1,10 @@
+
+const express = require('express');
+const app = express();
+const cors = require('cors')
+const PORT = 8000;
+app.use(cors)
+
 let cloudTypes = {
     'Cirrus': {
 
@@ -83,11 +90,6 @@ let cloudTypes = {
     }
 
 }
-
-const express = require('express');
-const app = express();
-const PORT = 8000;
-
 app.get('/', (request, response) => {
     response.sendFile(__dirname + '/index.html')
 })
